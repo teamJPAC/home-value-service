@@ -22,6 +22,7 @@ const Home = class extends React.PureComponent {
   }
 
   render() {
+    console.log(this.props);
     const zestimate = this.props.current.zestimate;
     const currentZest = zestimate[zestimate.length - 1];
     const low = zestimate.slice(-1)[0] - 29374;

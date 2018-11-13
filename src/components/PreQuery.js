@@ -1,7 +1,7 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
-import App from '../App';
+import Main from '../Main';
 
 export const PreQuery = () => {
   let rand = [Math.floor(Math.random() * 100)];
@@ -34,7 +34,7 @@ export const PreQuery = () => {
         if (error) {
           return <p>Error :(</p>;
         }
-        return <App current={data} num={rand} />;
+        return <Main current={data} num={rand} />;
       }}
     </Query>
   );

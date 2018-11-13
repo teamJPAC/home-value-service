@@ -1,4 +1,4 @@
-# Project Name
+# Zillgo Home Value Service
 
 > Project description
 
@@ -35,5 +35,6 @@ From within the root directory:
 ```sh
 npm install -g webpack
 npm install
+fix this
 ```
 

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "additional information for Zill-Woah!",
   "author": "Brian Louie",
-  "license": "",
+  "license": "ISC",
   "engines": {
     "node": ">=6.13.0"
   },
@@ -11,12 +11,14 @@
     "db:test": "jest src/spec/database.test.js --config ./renamed-config.js",
     "test": "jest src/spec/App.test.js",
     "dev": "webpack -d --mode development --watch ",
+    "build": "webpack --mode=production",
     "db:seed": "node server/database/data-seed.js",
-    "start": "nodemon --exec babel-node server/server.js"
+    "start": "node server/server.js"
   },
   "dependencies": {
     "apollo-boost": "^0.1.18",
     "cors": "^2.8.4",
+    "express": "^4.16.4",
     "express-graphql": "^0.6.12",
     "faker": "^4.1.0",
     "graphql": "^14.0.2",
@@ -41,7 +43,7 @@
     "babel-loader": "^8.0.4",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
     "jest": "^23.6.0",
     "jest-environment-node": "^23.4.0",
     "jsdom": "13.0.0",
@@ -49,11 +51,26 @@
     "mongodb-memory-server": "^2.6.2",
     "ramda": "^0.25.0",
     "regenerator-runtime": "^0.12.1",
+    "uglifyjs": "^2.4.11",
+    "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.22.0",
     "webpack-cli": "^3.1.2"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/src/spec/setupTests.js",
     "testEnvironment": "jsdom"
-  }
+  },
+  "main": "renamed-config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Only-the-Best/additional-information-service.git"
+  },
+  "keywords": [
+    "express",
+    "proxy"
+  ],
+  "bugs": {
+    "url": "https://github.com/Only-the-Best/additional-information-service/issues"
+  },
+  "homepage": "https://github.com/Only-the-Best/additional-information-service#readme"
 }

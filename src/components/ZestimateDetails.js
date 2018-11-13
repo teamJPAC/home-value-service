@@ -7,7 +7,7 @@ import ZestimateChart from './ZestimateChart.js';
 import GraphNavbar from './GraphNavbar.js';
 import LocalTaxAssessments from './LocalTaxAssessments.js';
 import MarketAppreciation from './MarketAppreciation.js';
-import { HouseIdContext } from '../App';
+import { HouseIdContext } from '../Main';
 
 export default class ZestimateDetails extends React.PureComponent {
   constructor(props) {
@@ -138,9 +138,15 @@ export default class ZestimateDetails extends React.PureComponent {
                               {this.state.comparableAverage}
                             </span>
                             {this.state.comparableHomes ? (
-                              <img className="zest-chev" src="https://s3-us-west-1.amazonaws.com/housing-hr/down.png" />
+                              <img
+                                className="zest-chev"
+                                src="https://s3-us-west-1.amazonaws.com/housing-hr/down.png"
+                              />
                             ) : (
-                              <img className="zest-chev" src="https://s3-us-west-1.amazonaws.com/housing-hr/up.png" />
+                              <img
+                                className="zest-chev"
+                                src="https://s3-us-west-1.amazonaws.com/housing-hr/up.png"
+                              />
                             )}
                           </div>
                         </div>
@@ -170,9 +176,15 @@ export default class ZestimateDetails extends React.PureComponent {
                               )}
                             </span>
                             {this.state.localTaxAssessments ? (
-                              <img className="zest-chev" src="https://s3-us-west-1.amazonaws.com/housing-hr/down.png" />
+                              <img
+                                className="zest-chev"
+                                src="https://s3-us-west-1.amazonaws.com/housing-hr/down.png"
+                              />
                             ) : (
-                              <img className="zest-chev" src="https://s3-us-west-1.amazonaws.com/housing-hr/up.png" />
+                              <img
+                                className="zest-chev"
+                                src="https://s3-us-west-1.amazonaws.com/housing-hr/up.png"
+                              />
                             )}
                           </div>
                         </div>
@@ -200,9 +212,15 @@ export default class ZestimateDetails extends React.PureComponent {
                               {numberWithCommas(marketAppValue)}
                             </span>
                             {this.state.marketAppreciation ? (
-                              <img className="zest-chev" src="https://s3-us-west-1.amazonaws.com/housing-hr/down.png" />
+                              <img
+                                className="zest-chev"
+                                src="https://s3-us-west-1.amazonaws.com/housing-hr/down.png"
+                              />
                             ) : (
-                              <img className="zest-chev" src="https://s3-us-west-1.amazonaws.com/housing-hr/up.png" />
+                              <img
+                                className="zest-chev"
+                                src="https://s3-us-west-1.amazonaws.com/housing-hr/up.png"
+                              />
                             )}
                           </div>
                         </div>
@@ -230,9 +248,15 @@ export default class ZestimateDetails extends React.PureComponent {
                               {this.state.localSaleAverage}
                             </span>
                             {this.state.localSalePrices ? (
-                              <img className="zest-chev" src="https://s3-us-west-1.amazonaws.com/housing-hr/down.png" />
+                              <img
+                                className="zest-chev"
+                                src="https://s3-us-west-1.amazonaws.com/housing-hr/down.png"
+                              />
                             ) : (
-                              <img className="zest-chev" src="https://s3-us-west-1.amazonaws.com/housing-hr/up.png" />
+                              <img
+                                className="zest-chev"
+                                src="https://s3-us-west-1.amazonaws.com/housing-hr/up.png"
+                              />
                             )}
                           </div>
                         </div>

@@ -1,4 +1,4 @@
-import House from './database/House.js';
+const House = require('./database/House.js');
 
 const resolvers = {
   Query: {
@@ -11,4 +11,4 @@ const resolvers = {
   },
 };
 
-export default resolvers;
+module.exports = resolvers;

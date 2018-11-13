@@ -1,5 +1,10 @@
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 module.exports = {
   entry: __dirname + '/src/index.js',
+  optimization: {
+    minimizer: [new UglifyJsPlugin()]
+  },
   module: {
     rules: [
       {

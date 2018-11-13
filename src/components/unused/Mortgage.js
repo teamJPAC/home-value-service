@@ -1,8 +1,8 @@
 import React from 'react';
 import NumberFormat from 'react-number-format';
-import Template from './Template.js';
+import Template from '../Template.js';
 import MortgageChart from './MortgageChart.js';
-import { HouseIdContext } from '../App.js';
+import { HouseIdContext } from '../../Main.js';
 import MortgageChartLegend from './MortgageChartLegend';
 
 class MortgageBase extends React.PureComponent {
@@ -133,13 +133,13 @@ class MortgageBase extends React.PureComponent {
       hoa: this.state.hoa,
       pmi: this.state.pmi,
     };
-    const lessThan100 =(values) => {
-      const {floatValue} = values;
-      return floatValue >= 0.00 && floatValue <= 100.00;
+    const lessThan100 = (values) => {
+      const { floatValue } = values;
+      return floatValue >= 0.0 && floatValue <= 100.0;
     };
     const lessThanPrice = (values) => {
-      const {floatValue} = values;
-      return floatValue >= 0.00 && floatValue <= this.state.price;
+      const { floatValue } = values;
+      return floatValue >= 0.0 && floatValue <= this.state.price;
     };
     return (
       <HouseIdContext.Consumer>
@@ -310,7 +310,10 @@ class MortgageBase extends React.PureComponent {
                   <br />
                 </form>
               </div>
-              <img id="chart-dots" src="https://s3-us-west-1.amazonaws.com/housing-hr/chart-dots.png" />
+              <img
+                id="chart-dots"
+                src="https://s3-us-west-1.amazonaws.com/housing-hr/chart-dots.png"
+              />
               <MortgageChartLegend data={legendProps} />
               <div id="mortgage-chart-container">
                 <MortgageChart data={data} total={total} />

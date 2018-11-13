@@ -40,9 +40,7 @@ export default class MortgageChart extends React.Component {
           dominantBaseline="central"
         >
           <tspan alignmentBaseline="middle" fontSize="24">
-            {`$${numberWithCommas(
-              this.props.total,
-            )}`}
+            {`$${numberWithCommas(this.props.total)}`}
           </tspan>
         </text>
       </PieChart>
