@@ -3,7 +3,7 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import moment from 'moment';
 import HomeChart from './HomeChart.js';
-import { HouseIdContext } from '../App';
+import { HouseIdContext } from '../Main';
 
 const ZestimateChart = ({ selected }) => (
   <HouseIdContext.Consumer>

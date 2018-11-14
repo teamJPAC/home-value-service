@@ -1,13 +1,12 @@
 import React from 'react';
 import Home from './components/Home.js';
-import Mortgage from './components/Mortgage.js';
 
 export const HouseIdContext = React.createContext({
   houseArr: [],
   currentHouse: {},
 });
 
-export default class App extends React.PureComponent {
+export default class Main extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,13 +43,8 @@ export default class App extends React.PureComponent {
             expand={this.handleClick}
             current={this.state.currentHouse}
           />
-          <Mortgage
-            status={this.state.mortgage}
-            expand={this.handleClick}
-            />
         </div>
       </HouseIdContext.Provider>
     );
   }
 }
-

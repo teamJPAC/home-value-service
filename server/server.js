@@ -1,16 +1,18 @@
-import mongoose from 'mongoose';
-import schema from './schema.js';
-
+const mongoose = require('mongoose');
 const cors = require('cors');
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const path = require('path');
+const schema = require('./schema.js');
+const url = 'mongodb://localhost/houses'
+
+const port = 8081;
 
 const app = express();
 
 mongoose.Promise = global.Promise;
 mongoose.connect(
-  'mongodb://localhost/houses',
+   url,
   { useNewUrlParser: true },
 );
 
@@ -29,4 +31,6 @@ app.use(
   }),
 );
 
-app.listen(4000, () => console.log('Express GraphQL Server Now Running On localhost:4000/graphql'));
+app.listen(port, () => console.log(
+  `Express GraphQL Server Now Running On localhost:${port}/graphql`,
+));

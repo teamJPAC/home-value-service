@@ -1,5 +1,5 @@
-import { makeExecutableSchema } from 'graphql-tools';
-import resolvers from './resolvers.js';
+const { makeExecutableSchema } = require('graphql-tools');
+const resolvers = require('./resolvers.js');
 
 const typeDefs = `
   type Home {
@@ -26,4 +26,4 @@ const schema = makeExecutableSchema({
   resolvers,
 });
 
-export default schema;
+module.exports = schema;

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import MongoMemoryServer from 'mongodb-memory-server';
-const seedFunc = require('../../server/database/data-seed.js');
 
+const seedFunc = require('../../server/database/data-seed.js');
 
 // May require additional time for downloading MongoDB binaries
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 60000;
@@ -12,9 +12,13 @@ const opts = { useMongoClient: true }; // remove this option if you use mongoose
 beforeAll(async () => {
   mongoServer = new MongoMemoryServer();
   const mongoUri = await mongoServer.getConnectionString();
-  await mongoose.connect(mongoUri, opts, (err) => {
-    if (err) console.error(err);
-  });
+  await mongoose.connect(
+    mongoUri,
+    opts,
+    (err) => {
+      if (err) console.error(err);
+    },
+  );
 });
 
 afterAll(() => {
@@ -23,7 +27,7 @@ afterAll(() => {
 });
 
 describe('...', () => {
-  it("...", async () => {
+  it('...', async () => {
     const testSchema = new mongoose.Schema({
       _id: String,
       address: String,
@@ -41,7 +45,6 @@ describe('...', () => {
     await Test.create(seedFunc());
     const thing = await Test.find({}, (err, results) => {
       expect(results.length).toBe(1);
-    })
+    });
   });
 });
-
