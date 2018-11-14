@@ -1,9 +1,9 @@
 {
-  "name": "additional-information-service",
+  "name": "home-value-service",
   "version": "1.0.0",
-  "description": "additional information for Zill-Woah!",
-  "author": "Brian Louie",
-  "license": "ISC",
+  "description": "optimizing home-value-service for ZillGo!",
+  "author": "Jackie Chen",
+  "license": "MIT",
   "engines": {
     "node": ">=6.13.0"
   },
@@ -60,17 +60,8 @@
     "setupTestFrameworkScriptFile": "<rootDir>/src/spec/setupTests.js",
     "testEnvironment": "jsdom"
   },
-  "main": "renamed-config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Only-the-Best/additional-information-service.git"
-  },
   "keywords": [
     "express",
     "proxy"
-  ],
-  "bugs": {
-    "url": "https://github.com/Only-the-Best/additional-information-service/issues"
-  },
-  "homepage": "https://github.com/Only-the-Best/additional-information-service#readme"
+  ]
 }
