@@ -4,7 +4,8 @@ const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const path = require('path');
 const schema = require('./schema.js');
-const url = 'mongodb://localhost/houses'
+
+const url = 'mongodb://localhost/houses';
 
 const port = 8081;
 
@@ -12,7 +13,7 @@ const app = express();
 
 mongoose.Promise = global.Promise;
 mongoose.connect(
-   url,
+  url,
   { useNewUrlParser: true },
 );
 
