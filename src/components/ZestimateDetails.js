@@ -143,11 +143,11 @@ export default class ZestimateDetails extends React.PureComponent {
                                 src="https://s3-us-west-1.amazonaws.com/housing-hr/down.png"
                               />
                             ) : (
-                              <img
-                                className="zest-chev"
-                                src="https://s3-us-west-1.amazonaws.com/housing-hr/up.png"
-                              />
-                            )}
+                                <img
+                                  className="zest-chev"
+                                  src="https://s3-us-west-1.amazonaws.com/housing-hr/up.png"
+                                />
+                              )}
                           </div>
                         </div>
                       </section>
@@ -181,11 +181,11 @@ export default class ZestimateDetails extends React.PureComponent {
                                 src="https://s3-us-west-1.amazonaws.com/housing-hr/down.png"
                               />
                             ) : (
-                              <img
-                                className="zest-chev"
-                                src="https://s3-us-west-1.amazonaws.com/housing-hr/up.png"
-                              />
-                            )}
+                                <img
+                                  className="zest-chev"
+                                  src="https://s3-us-west-1.amazonaws.com/housing-hr/up.png"
+                                />
+                              )}
                           </div>
                         </div>
                       </section>
@@ -217,11 +217,11 @@ export default class ZestimateDetails extends React.PureComponent {
                                 src="https://s3-us-west-1.amazonaws.com/housing-hr/down.png"
                               />
                             ) : (
-                              <img
-                                className="zest-chev"
-                                src="https://s3-us-west-1.amazonaws.com/housing-hr/up.png"
-                              />
-                            )}
+                                <img
+                                  className="zest-chev"
+                                  src="https://s3-us-west-1.amazonaws.com/housing-hr/up.png"
+                                />
+                              )}
                           </div>
                         </div>
                       </section>
@@ -253,11 +253,11 @@ export default class ZestimateDetails extends React.PureComponent {
                                 src="https://s3-us-west-1.amazonaws.com/housing-hr/down.png"
                               />
                             ) : (
-                              <img
-                                className="zest-chev"
-                                src="https://s3-us-west-1.amazonaws.com/housing-hr/up.png"
-                              />
-                            )}
+                                <img
+                                  className="zest-chev"
+                                  src="https://s3-us-west-1.amazonaws.com/housing-hr/up.png"
+                                />
+                              )}
                           </div>
                         </div>
                       </section>
