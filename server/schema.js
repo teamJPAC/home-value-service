@@ -18,7 +18,7 @@ const typeDefs = `
     allHouses: [Home]
     getSome(num: [Int]!): [Home]
   }
-  
+
 `;
 
 const schema = makeExecutableSchema({
