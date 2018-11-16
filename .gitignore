@@ -7,7 +7,7 @@
 /.tmp
 /build
 /dist
-/server/database/my1.csv
+/server/database/csv
 
 # dependencies
 /node_modules
