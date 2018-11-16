@@ -6,6 +6,7 @@ const csv = require('fast-csv');
 const fs = require('fs');
 
 const random = num => Math.ceil(Math.random() * num);
+const randomRange = (min, max) => Math.floor(Math.random() * (max - min - 1) + min);
 
 // const zestHistory = () => {
 //   let total = 300000;
@@ -45,38 +46,40 @@ const random = num => Math.ceil(Math.random() * num);
 //   });
 // };
 
+let count = 1000000;
+
 const seedFunc = () => {
-  let count = 0;
-  return Array.from({ length: 10000000 }, () => {
-    const id = count;
-    count++;
+  const id = count;
+  count++;
 
-    const zestimate = [random(10), random(10), random(10), random(10), random(10)];
-    return {
-      _id: id.toString(),
-      address: faker.address.streetAddress(),
-      city: faker.address.city(),
-      zip: 98100 + random(99),
-      zestimate,
-      beds: 3 + Math.floor(Math.random() * 2.5),
-      baths: 2.5 + 0.5 * Math.floor(Math.random() * 3),
-      sqFt: 1150 + 10 * random(20),
-      status: Math.random() < 0.5 ? 'For Sale' : 'Sold',
-      taxAssessment: zestimate[zestimate.length - 1] * 0.937,
-    };
-  });
+  return {
+    _id: id.toString(),
+    address: faker.address.streetAddress(),
+    city: faker.address.city(),
+    zip: 98100 + random(99),
+    // zestimate,
+    beds: 3 + Math.floor(Math.random() * 2.5),
+    baths: 2.5 + 0.5 * Math.floor(Math.random() * 3),
+    sqFt: 1150 + 10 * random(20),
+    status: Math.random() < 0.5 ? 'For Sale' : 'Sold',
+    taxAssessment: randomRange(100000, 500000) * 0.937,
+  };
 };
-
-const seed = seedFunc();
 
 const sdcSeed = () => {
   console.time('time');
   const csvStream = csv.createWriteStream({ headers: false });
-  const writableStream = fs.createWriteStream('my1.csv');
+  const writableStream = fs.createWriteStream(__dirname + '/csv/test2.csv');
+
+  csvStream.on('finish', () => {
+    console.log('DONE!!!');
+  });
+
   csvStream.pipe(writableStream);
-  for (let i = 0; i < 10000000; i++) {
-    csvStream.write(seed[i]);
+  for (let i = 1000000; i < 2000000; i++) {
+    csvStream.write(seedFunc());
   }
+
   csvStream.end();
   console.timeEnd('time');
 };
