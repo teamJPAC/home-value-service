@@ -13,7 +13,8 @@
     "dev": "webpack -d --mode development --watch ",
     "build": "webpack --mode=production",
     "db:seed": "node server/database/data-seed.js",
-    "start": "node server/server.js"
+    "start": "nodemon server/server.js",
+    "seed2": "node server/database/seedCSV/seed1.js; node server/database/seedCSV/seed2.js; node server/database/seedCSV/seed3.js; node server/database/seedCSV/seed4.js; node server/database/seedCSV/seed5.js; node server/database/seedCSV/seed6.js; node server/database/seedCSV/seed7.js; node server/database/seedCSV/seed8.js; node server/database/seedCSV/seed9.js; node server/database/seedCSV/seed10.js"
   },
   "dependencies": {
     "apollo-boost": "^0.1.18",

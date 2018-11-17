@@ -5,21 +5,24 @@ const resolvers = {
     async allHouses() {
       return await House.find();
     },
-    async getSome(dummy, numObj) {
+    async getSome(_, numObj) {
       return await House.find({ id: { $in: numObj.num } });
     },
   },
   Mutation: {
-    async addHouse(input) {
+    async addHouse(_, { input }) {
+      console.log('INPUT ------>', input);
       // add data into house
       return await House.create(input);
     },
-    async updateHouse() {
+    async updateHouse(_, { input }) {
       // update data in house
-      return await House.findOneAndUpdate({ id: {} });
+      return await House.updateOne({ id: input.id }, input, { multi: false });
     },
-    async deleteHouse() {
+    async deleteHouse(_, { id }) {
+      console.log(id)
       // delete data in house
+      return await House.deleteOne({ id });
     },
   },
 };
