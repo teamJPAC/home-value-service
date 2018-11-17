@@ -17,27 +17,20 @@ mongoose.connect(
   { useNewUrlParser: true },
 );
 
-app.use(cors());
-app.use(express.static(`${__dirname}/../public`));
+// app.use(cors());
+// app.use(express.static(`${__dirname}/../public`));
 
-app.get('/:urlId', (req, res) => {
-  res.sendFile(path.join(`${__dirname}/../public/index.html`));
-});
+// app.get('/:urlId', (req, res) => {
+//   res.sendFile(path.join(`${__dirname}/../public/index.html`));
+// });
 
-app.put('/:urlId', (req, res) => {
+// app.post('/graphql',
+//   graphqlHTTP({
+//     schema,
+//     graphiql: false,
+//   }),
+// );
 
-});
-
-app.post('/graphql',
-  graphqlHTTP({
-    schema,
-    graphiql: false,
-  }),
-);
-
-app.delete('/:urlId', (req, res) => {
-
-});
 
 app.use(
   '/graphql',
