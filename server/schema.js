@@ -3,13 +3,12 @@ const resolvers = require('./resolvers.js');
 
 const typeDefs = `
   type Home {
-    _id: String!
+    id: Int!
     address: String!
     city: String!
-    zestimate: [Int]!
-    beds: Int!
+    beds: Float!
     baths: Float!
-    sqFt: Int!
+    sqFt: Float!
     status: String!
     taxAssessment: Float!
   }
@@ -17,6 +16,23 @@ const typeDefs = `
   type Query {
     allHouses: [Home]
     getSome(num: [Int]!): [Home]
+  }
+
+  input UserInput {
+    id: Int
+    address: String
+    city: String
+    beds: Float
+    baths: Float
+    sqFt: Float
+    status: String
+    taxAssessment: Float
+  }
+
+  type Mutation {
+    addHouse(input: UserInput!): Home
+    updateHouse(id: Int!, input: UserInput!) : Home
+    deleteHouse(id: Int!): Home
   }
 
 `;
