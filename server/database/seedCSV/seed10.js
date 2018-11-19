@@ -35,7 +35,7 @@ const sdcSeed = () => {
     console.log('DONE!!!');
   });
   csvStream.pipe(writableStream);
-  for (let i = 9000000; i <= 10000000; i++) {
+  for (let i = 9000000; i < 10000000; i++) {
     csvStream.write(seedFunc());
   }
   csvStream.end();

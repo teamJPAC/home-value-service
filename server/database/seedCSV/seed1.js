@@ -5,7 +5,7 @@ const fs = require('fs');
 const random = num => Math.ceil(Math.random() * num);
 const randomRange = (min, max) => Math.floor(Math.random() * (max - min - 1) + min);
 
-let count = 1;
+let count = 0;
 
 const seedFunc = () => {
   const id = count;
@@ -35,7 +35,7 @@ const sdcSeed = () => {
     console.log('DONE!!!');
   });
   csvStream.pipe(writableStream);
-  for (let i = 1; i <= 1000000; i++) {
+  for (let i = 0; i <= 1000000; i++) {
     csvStream.write(seedFunc());
   }
   csvStream.end();
