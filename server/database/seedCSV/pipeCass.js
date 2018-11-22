@@ -38,26 +38,26 @@ const seedFunc = () => {
 };
 
 let count = 0;
-let records = 1000000;
+let records = 1000;
 let stream = 1;
 
 const inStream = new Readable({
   read() {
     this.push(seedFunc());
-    if (count === 10000000) {
-      console.timeEnd('Result Time')
+    if (count === 10000) {
+      console.timeEnd('Result Time');
       this.push(null);
     }
     if (count === records) {
-      records += 1000000;
       this.pause();
       this.unpipe(streams[stream]);
       stream++;
       this.pipe(streams[stream]);
       this.resume();
+      records += 1000;
     }
   },
 });
 
-console.time('Result Time')
+console.time('Result Time');
 inStream.pipe(streams[stream]);
