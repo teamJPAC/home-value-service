@@ -33,6 +33,13 @@ const ZestimateChart = ({ selected }) => (
               return <p>Error :(</p>;
             }
 
+            //load zestimate into data
+            data.forEach(d => {
+              d["zestimate"] = zestimate;
+              console.log(d)
+            });
+
+
             data = data.getSome;
             const current = currentHouse.zestimate;
             while (current.length < 132) {
