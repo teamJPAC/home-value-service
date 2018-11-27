@@ -16,7 +16,6 @@ export const PreQuery = () => {
           getSome(num: $num) {
             address
             city
-            zestimate
             beds
             baths
             sqFt
@@ -28,6 +27,7 @@ export const PreQuery = () => {
       variables={{ num: rand }}
     >
       {({ loading, error, data }) => {
+        console.log(data);
         if (loading) {
           return <p>Loading...</p>;
         }
