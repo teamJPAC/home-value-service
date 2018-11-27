@@ -8,6 +8,7 @@
 /build
 /dist
 /server/database/seedCSV/csv
+config.js
 
 # dependencies
 /node_modules
