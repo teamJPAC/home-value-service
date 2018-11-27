@@ -55,12 +55,11 @@ export default class ZestimateDetails extends React.PureComponent {
             query={gql`
               query getTen($num: [Int]!) {
                 getSome(num: $num) {
-                  _id
+                  id
                   address
                   beds
                   baths
                   sqFt
-                  zestimate
                   status
                   taxAssessment
                 }
@@ -76,6 +75,12 @@ export default class ZestimateDetails extends React.PureComponent {
                 return `Error! ${error.message}`;
               }
               data = data.getSome;
+
+              //load zestimate into data
+              data.forEach(d => {
+                d["zestimate"] = zestimate;
+                console.log(d)
+              });
 
               const numberWithCommas = x => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
@@ -107,8 +112,10 @@ export default class ZestimateDetails extends React.PureComponent {
                 currentHouse.taxAssessment,
               );
 
-              const lastSold = currentHouse.zestimate.slice(-49)[0];
-              const marketAppValue = currentHouse.zestimate[currentHouse.zestimate.length - 1];
+              console.log(currentHouse)
+
+              const lastSold = currentHouse[0].zestimate.slice(-49)[0];
+              const marketAppValue = currentHouse[0].zestimate[currentHouse[0].zestimate.length - 1];
 
               return (
                 <div id="expand-zestimate-details-container">
@@ -228,7 +235,7 @@ export default class ZestimateDetails extends React.PureComponent {
                       {this.state.marketAppreciation && (
                         <MarketAppreciation
                           houses={this.state.houses}
-                          market={currentHouse.zestimate}
+                          market={currentHouse[0].zestimate}
                         />
                       )}
                       <section
@@ -302,3 +309,46 @@ export default class ZestimateDetails extends React.PureComponent {
     );
   }
 }
+
+
+const random = num => Math.ceil(Math.random() * num);
+
+const zestHistory = () => {
+  let total = 300000;
+  const years = 8 + random(2);
+  const months = random(12);
+  let count = 0;
+  const spike = [12, 7, 12, 5, 8, 5, 14, 3, 19, 1000];
+  const slope = [
+    -4000,
+    -3000,
+    -1000,
+    2000,
+    5000,
+    2000,
+    5000,
+    3000,
+    10000,
+    7000,
+    700,
+    -700,
+  ];
+  let moreSlope = 0;
+
+  return Array.from({ length: years * 12 + months }, () => {
+    count++;
+    if (count % spike[0] === 0) {
+      const rand = random(4);
+      moreSlope = rand > 2 ? 2000 : rand === 2 ? -2000 : 0;
+      if (spike[0] === 14) {
+        moreSlope = 8000;
+      }
+      spike.shift();
+    }
+    total += slope[Math.floor(count / 12)] + moreSlope;
+
+    return total + random(7000);
+  });
+};
+
+const zestimate = zestHistory()

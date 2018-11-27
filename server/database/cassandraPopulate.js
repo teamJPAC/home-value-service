@@ -24,9 +24,9 @@ const MyModel = models.loadSchema('Home', {
     zip: 'int',
     beds: 'decimal',
     baths: 'decimal',
-    sqft: 'decimal',
+    sqft: 'int',
     status: 'text',
-    taxassessment: 'decimal',
+    taxassessment: 'int',
   },
   key: ['id'],
 });

@@ -13,9 +13,9 @@ city varchar(28),
 zip int,
 beds decimal,
 baths decimal,
-sqFt decimal,
+sqFt int,
 status varchar(10),
-taxAssessment decimal
+taxAssessment int
 )`;
 
 db.query(sdc)
@@ -41,3 +41,5 @@ db.query(csvSeed)
   });
 
 module.exports = db;
+
+//create index num on zillgo (id); - add index ontop of existing id
