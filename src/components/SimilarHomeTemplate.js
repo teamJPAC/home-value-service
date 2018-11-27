@@ -1,10 +1,51 @@
 import React from 'react';
 import faker from 'faker';
 
+const random = num => Math.ceil(Math.random() * num);
+
+const zestHistory = () => {
+  let total = 300000;
+  const years = 8 + random(2);
+  const months = random(12);
+  let count = 0;
+  const spike = [12, 7, 12, 5, 8, 5, 14, 3, 19, 1000];
+  const slope = [
+    -4000,
+    -3000,
+    -1000,
+    2000,
+    5000,
+    2000,
+    5000,
+    3000,
+    10000,
+    7000,
+    700,
+    -700,
+  ];
+  let moreSlope = 0;
+
+  return Array.from({ length: years * 12 + months }, () => {
+    count++;
+    if (count % spike[0] === 0) {
+      const rand = random(4);
+      moreSlope = rand > 2 ? 2000 : rand === 2 ? -2000 : 0;
+      if (spike[0] === 14) {
+        moreSlope = 8000;
+      }
+      spike.shift();
+    }
+    total += slope[Math.floor(count / 12)] + moreSlope;
+
+    return total + random(7000);
+  });
+};
+
+const zestimate = zestHistory()
+
 const SimilarHomeTemplate = ({ houses, start, stop }) => {
   const numberWithCommas = x => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   return houses.slice(start, stop).map((house, idx) => {
-    const zestimate = house.zestimate.slice(-1)[0];
     let zestimateStr = start === 10
       ? zestimate * 0.97 + zestimate * Math.pow(10, -2) * Math.random() * 20
       : zestimate;
