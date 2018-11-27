@@ -3,14 +3,14 @@ const resolvers = require('./resolvers.js');
 
 const typeDefs = `
   type Home {
-    id: Int!
-    address: String!
-    city: String!
-    beds: Float!
-    baths: Float!
-    sqFt: Float!
-    status: String!
-    taxAssessment: Float!
+    id: Int
+    address: String
+    city: String
+    beds: Float
+    baths: Float
+    sqFt: Float
+    status: String
+    taxAssessment: Float
   }
 
   type Query {
