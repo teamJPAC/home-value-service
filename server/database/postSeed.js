@@ -1,13 +1,13 @@
-const pg = require('pg');
+const { Client } = require('pg');
 
 const connect = 'postgres://postgres:password@localhost:5432/housingdb';
-const db = new pg.Client(connect);
+const db = new Client(connect);
 
 db.connect();
 
 const sdc = `create table if not exists zillgo (
 
-_id int,
+id int,
 address varchar(84),
 city varchar(28),
 zip int,
@@ -28,7 +28,7 @@ db.query(sdc)
     db.end();
   });
 
-const csvSeed = 'copy zillgo from \'/Users/macbeth/Documents/Coding/hrr34/home-value-service/server/database/test.csv\' with (format csv)';
+const csvSeed = 'copy zillgo from \'/Users/macbeth/Documents/Coding/hrr34/home-value-service/server/database/seedCSV/csv/pipePost.csv\' with (format csv)';
 
 db.query(csvSeed)
   .then((res) => {
