@@ -41,7 +41,7 @@ MyModel.syncDB((err, result) => {
 });
 
 
-// COPY house_info."Home"(id, address, city, zip, beds, baths, sqft, status, taxassessment) FROM '/Users/macbeth/Documents/Coding/hrr34/home-value-service/server/database/csv/test1.csv' WITH HEADER = FALSE;
+// COPY house_info."Home"(id, address, city, zip, beds, baths, sqft, status, taxassessment) FROM '/Users/macbeth/Documents/Coding/hrr34/home-value-service/server/database/seedCSV/csv/pipePost.csv' WITH HEADER = FALSE;
 
 // COPY house_info."Home"(id, address, city, zip, beds, baths, sqft, status, taxassessment) FROM '/Users/macbeth/Documents/Coding/hrr34/home-value-service/server/database/csv/test2.csv' WITH HEADER = FALSE;
 
