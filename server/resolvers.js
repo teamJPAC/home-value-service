@@ -1,4 +1,5 @@
 const House = require('./database/House.js');
+const HousePG = require('./postCRUD');
 
 const resolvers = {
   Query: {
@@ -6,7 +7,8 @@ const resolvers = {
       return await House.find();
     },
     async getSome(_, numObj) {
-      return await House.find({ id: { $in: numObj.num } });
+      // return await House.find({ id: { $in: numObj.num } });
+      return await HousePG.read(numObj.num);
     },
   },
   Mutation: {
@@ -20,7 +22,7 @@ const resolvers = {
       return await House.updateOne({ id: input.id }, input, { multi: false });
     },
     async deleteHouse(_, { id }) {
-      console.log(id)
+      console.log(id);
       // delete data in house
       return await House.deleteOne({ id });
     },
