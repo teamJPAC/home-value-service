@@ -36,6 +36,7 @@ const inStreamPost = new Readable({
     }
   },
 });
+
 console.time('Time');
 const writeableStream = fs.createWriteStream('csv/pipePost.csv');
 inStreamPost.pipe(writeableStream);
