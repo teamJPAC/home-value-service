@@ -19,7 +19,7 @@ const seedFunc = () => {
   const baths = 2.5 + 0.5 * Math.floor(Math.random() * 3);
   const sqFt = 1150 + 10 * random(20);
   const status = Math.random() < 0.5 ? 'For Sale' : 'Sold';
-  const taxAssessment = randomRange(100000, 500000) * 0.937;
+  const taxAssessment = randomRange(100000, 500000);
 
   const result = `${currentId},${address},${city},${zip},${beds},${baths},${sqFt},${status},${taxAssessment}\n`;
 
