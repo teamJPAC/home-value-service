@@ -1,4 +1,4 @@
-require('../newrelic.js');
+require('newrelic');
 
 const mongoose = require('mongoose');
 const cors = require('cors');
