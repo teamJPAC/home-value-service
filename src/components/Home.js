@@ -1,5 +1,11 @@
 import React from 'react';
-import ZestimateDetails from './ZestimateDetails.js';
+// import ZestimateDetails from './ZestimateDetails.js';
+import Loadable from 'react-loadable';
+import Loading from './Loading';
+const ZestimateLoadComponent = Loadable({
+  loader: () => import('./ZestimateDetails'),
+  loading: Loading,
+});
 import Template from './Template.js';
 
 const Home = class extends React.PureComponent {
@@ -138,7 +144,7 @@ const Home = class extends React.PureComponent {
           )}
         </div>
         {this.state.zestimateInside && (
-          <ZestimateDetails
+          <ZestimateLoadComponent
             status={this.props.status}
             graph={this.state.zestimateInside}
             getSelected={this.getSelected}
