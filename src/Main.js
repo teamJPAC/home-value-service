@@ -38,8 +38,6 @@ export default class Main extends React.PureComponent {
     })
     this.setState({currentHouse: data}, () => {
     })
-    console.log(this.state.currentHouse)
-
   }
 
 
