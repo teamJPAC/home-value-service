@@ -1,10 +1,14 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
-  entry: __dirname + '/src/index.js',
+  entry: `${__dirname}/src/index.js`,
   optimization: {
-    minimizer: [new UglifyJsPlugin()]
+    minimizer: [new UglifyJsPlugin()],
   },
+  plugins: [
+    new CompressionPlugin(),
+  ],
   module: {
     rules: [
       {
@@ -13,14 +17,14 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-react', '@babel/preset-env']
-          }
-        }
-      }
-    ]
+            presets: ['@babel/preset-react', '@babel/preset-env'],
+          },
+        },
+      },
+    ],
   },
   output: {
     filename: 'bundle.js',
-    path: __dirname + '/public',
-  }
+    path: `${__dirname}/public`,
+  },
 };

@@ -8,9 +8,9 @@ const typeDefs = `
     city: String
     beds: Float
     baths: Float
-    sqFt: Float
+    sqft: Float
     status: String
-    taxAssessment: Float
+    taxassessment: Float
   }
 
   type Query {
@@ -24,9 +24,9 @@ const typeDefs = `
     city: String
     beds: Float
     baths: Float
-    sqFt: Float
+    sqft: Float
     status: String
-    taxAssessment: Float
+    taxassessment: Float
   }
 
   type Mutation {

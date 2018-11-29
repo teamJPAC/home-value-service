@@ -18,16 +18,15 @@ export const PreQuery = () => {
             city
             beds
             baths
-            sqFt
+            sqft
             status
-            taxAssessment
+            taxassessment
           }
         }
       `}
       variables={{ num: rand }}
     >
       {({ loading, error, data }) => {
-        console.log(data);
         if (loading) {
           return <p>Loading...</p>;
         }

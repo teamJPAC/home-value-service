@@ -1,8 +1,9 @@
 import React from 'react';
 import LocalTax from './LocalTax.js';
 
-const LocalTaxAssessments = ({ houses, taxAssessment }) => {
+const LocalTaxAssessments = ({ houses }) => {
   const numberWithCommas = x => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  const firstTaxAssessument = houses[0].taxassessment
   return (
     <div className="zestimate-subexpand-container" id="tax-expand-container">
       <div className="zestimate-subexpand-explanation-container">
@@ -27,7 +28,7 @@ const LocalTaxAssessments = ({ houses, taxAssessment }) => {
           <div className="zestimate-compare-before">
             <div className="zestimate-compare-value">
               $
-              {numberWithCommas(Math.floor(taxAssessment * 0.64))}
+              {numberWithCommas(Math.floor(firstTaxAssessument * 0.64))}
               {' '}
               <span className="zestimate-compare-before-title">
                 2017 tax-assessed value
@@ -45,7 +46,7 @@ const LocalTaxAssessments = ({ houses, taxAssessment }) => {
             <h3 className="compare-symbol">=</h3>
             <div className="zestimate-compare-value">
               $
-              {numberWithCommas(taxAssessment)}
+              {numberWithCommas(firstTaxAssessument)}
               {' '}
               <span className="zestimate-compare-after">
                 tax-based estimate

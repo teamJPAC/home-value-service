@@ -8,6 +8,8 @@
 /build
 /dist
 /server/database/seedCSV/csv
+/server/ip.js
+/src/spec/ip.js
 config.js
 
 # dependencies
