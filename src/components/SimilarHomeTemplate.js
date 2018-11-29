@@ -54,7 +54,7 @@ const SimilarHomeTemplate = ({ houses, start, stop }) => {
               {house.baths}
               {' '}
               ba •
-              {house.sqFt}
+              {house.sqft}
               {' '}
               sqft
             </div>
@@ -71,8 +71,8 @@ const SimilarHomeTemplate = ({ houses, start, stop }) => {
           {start === 10
             ? `${sellIncrease}%`
             : start === 20
-              ? `$${numberWithCommas(Math.floor(house.taxAssessment * 0.64))}`
-              : `$${Math.floor(zestimate / house.sqFt)}`}
+              ? `$${numberWithCommas(Math.floor(house.taxassessment * 0.64))}`
+              : `$${Math.floor(zestimate / house.sqft)}`}
         </h3>
       </div>
     );
