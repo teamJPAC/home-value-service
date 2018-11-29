@@ -14,34 +14,43 @@ const ZestimateChart = ({ selected }) => (
           houseList.unshift(rand);
         }
       }
+      houseList.pop()
       return (
         <Query
           query={gql`
             query Homes($num: [Int]!) {
               getSome(num: $num) {
-                zestimate
+                id
               }
             }
           `}
           variables={{ num: houseList }}
         >
           {({ loading, error, data }) => {
+
             if (loading) {
               return <p>Loading...</p>;
             }
+
             if (error) {
-              return <p>Error :(</p>;
+              return <p>Error :( {error.message}</p>;
             }
 
-            //load zestimate into data
-            data.forEach(d => {
-              d["zestimate"] = zestimate;
-              console.log(d)
-            });
+            if(data.getSome !== undefined){
+              currentHouse.data = data.getSome
+            }
 
+            data = currentHouse.data;
+        if (data !== undefined) {
+              //load zestimate into data
+              data.forEach(d => {
+                d["zestimate"] = zestHistory();
+              });
+            } else {
+              return 'FAILED DATA Loading...'
+            }
 
-            data = data.getSome;
-            const current = currentHouse.zestimate;
+            const current = currentHouse[0].zestimate;
             while (current.length < 132) {
               current.unshift(null);
             }
@@ -71,7 +80,6 @@ const ZestimateChart = ({ selected }) => (
             } else if (selected === 1) {
               formatted = formatted.slice(-12);
             }
-
             return <HomeChart data={formatted} />;
           }}
         </Query>
@@ -81,3 +89,43 @@ const ZestimateChart = ({ selected }) => (
 );
 
 export default ZestimateChart;
+
+const random = num => Math.ceil(Math.random() * num);
+
+const zestHistory = () => {
+  let total = 300000;
+  const years = 8 + random(2);
+  const months = random(12);
+  let count = 0;
+  const spike = [12, 7, 12, 5, 8, 5, 14, 3, 19, 1000];
+  const slope = [
+    -4000,
+    -3000,
+    -1000,
+    2000,
+    5000,
+    2000,
+    5000,
+    3000,
+    10000,
+    7000,
+    700,
+    -700,
+  ];
+  let moreSlope = 0;
+
+  return Array.from({ length: years * 12 + months }, () => {
+    count++;
+    if (count % spike[0] === 0) {
+      const rand = random(4);
+      moreSlope = rand > 2 ? 2000 : rand === 2 ? -2000 : 0;
+      if (spike[0] === 14) {
+        moreSlope = 8000;
+      }
+      spike.shift();
+    }
+    total += slope[Math.floor(count / 12)] + moreSlope;
+
+    return total + random(7000);
+  });
+};
