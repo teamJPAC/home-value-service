@@ -59,14 +59,16 @@ app.listen(port0, () => console.log(
   `Express GraphQL Server Now Running On localhost:${port0}/graphql`,
 ));
 
-app.listen(port1, () => console.log(
-  `Express GraphQL Server Now Running On localhost:${port1}/graphql`,
-));
+/** NGINX EXPERIMENTS */
 
-app.listen(port2, () => console.log(
-  `Express GraphQL Server Now Running On localhost:${port2}/graphql`,
-));
+// app.listen(port1, () => console.log(
+//   `Express GraphQL Server Now Running On localhost:${port1}/graphql`,
+// ));
 
-app.listen(port3, () => console.log(
-  `Express GraphQL Server Now Running On localhost:${port3}/graphql`,
-));
+// app.listen(port2, () => console.log(
+//   `Express GraphQL Server Now Running On localhost:${port2}/graphql`,
+// ));
+
+// app.listen(port3, () => console.log(
+//   `Express GraphQL Server Now Running On localhost:${port3}/graphql`,
+// ));
