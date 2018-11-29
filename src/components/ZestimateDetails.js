@@ -59,9 +59,9 @@ export default class ZestimateDetails extends React.PureComponent {
                   address
                   beds
                   baths
-                  sqFt
+                  sqft
                   status
-                  taxAssessment
+                  taxassessment
                 }
               }
             `}
@@ -79,7 +79,6 @@ export default class ZestimateDetails extends React.PureComponent {
               //load zestimate into data
               data.forEach(d => {
                 d["zestimate"] = zestimate;
-                console.log(d)
               });
 
               const numberWithCommas = x => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -108,11 +107,9 @@ export default class ZestimateDetails extends React.PureComponent {
                 );
               }
 
-              currentHouse.taxAssessment = Math.floor(
-                currentHouse.taxAssessment,
+              currentHouse[0].taxassessment = Math.floor(
+                currentHouse[0].taxassessment,
               );
-
-              console.log(currentHouse)
 
               const lastSold = currentHouse[0].zestimate.slice(-49)[0];
               const marketAppValue = currentHouse[0].zestimate[currentHouse[0].zestimate.length - 1];
@@ -179,7 +176,7 @@ export default class ZestimateDetails extends React.PureComponent {
                             <span id="local-sale-prices-average">
                               $
                               {numberWithCommas(
-                                Math.floor(currentHouse.taxAssessment),
+                                Math.floor(currentHouse[0].taxassessment),
                               )}
                             </span>
                             {this.state.localTaxAssessments ? (
@@ -199,7 +196,7 @@ export default class ZestimateDetails extends React.PureComponent {
                       {this.state.localTaxAssessments && (
                         <LocalTaxAssessments
                           houses={this.state.houses}
-                          taxAssessment={currentHouse.taxAssessment}
+                          taxAssessment={currentHouse[0].taxassessment}
                         />
                       )}
                       <section
