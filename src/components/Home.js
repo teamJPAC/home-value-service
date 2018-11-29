@@ -33,10 +33,8 @@ const Home = class extends React.PureComponent {
   }
 
   render() {
-    // console.log(this.props);
     // const zestimate = this.props.current.zestimate;
     const zestimate = this.state.zestimateArray;
-    // console.log(zestimate)
     const currentZest = zestimate[zestimate.length - 1];
     const low = zestimate.slice(-1)[0] - 29374;
     const high = zestimate.slice(-1)[0] + 28612;
