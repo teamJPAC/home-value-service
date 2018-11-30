@@ -42,4 +42,8 @@ db.query(csvSeed)
 
 module.exports = db;
 
-//create index num on zillgo (id); - add index ontop of existing id
+// create index num on zillgo (id); - add index ontop of existing id
+
+// scp -r -i home_value_comp.pem pipePost.csv ec2-user@ec2-54-242-102-202.compute-1.amazonaws.com:~
+
+// copy zillgo from '~\pipePost.csv' with (format csv)
