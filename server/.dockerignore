@@ -1,0 +1,17 @@
+#---------------------------------------#
+# Project Ignores                       #
+#---------------------------------------#
+
+# output
+./database/seedCSV/csv
+./ip.js
+../src/spec/ip.js
+../config.js
+
+# dependencies
+../node_modules
+../newrelic_agent.log
+../bin/newrelic_agent.log
+
+# linters
+../eslintrc.js
