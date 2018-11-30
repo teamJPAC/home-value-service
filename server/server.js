@@ -55,18 +55,23 @@ app.use(
 // disable x-powered-by
 app.disable('x-powered-by');
 
-app.listen(port0, () => console.log(
-  `Express GraphQL Server Now Running On localhost:${port0}/graphql`,
-));
+// app.listen(port0, () => console.log(
+//   `Express GraphQL Server Now Running On localhost:${port0}/graphql`,
+// ));
 
-app.listen(port1, () => console.log(
-  `Express GraphQL Server Now Running On localhost:${port1}/graphql`,
-));
+/** DOCKER STUFF */
+module.exports = app;
 
-app.listen(port2, () => console.log(
-  `Express GraphQL Server Now Running On localhost:${port2}/graphql`,
-));
+/** NGINX EXPERIMENTS */
 
-app.listen(port3, () => console.log(
-  `Express GraphQL Server Now Running On localhost:${port3}/graphql`,
-));
+// app.listen(port1, () => console.log(
+//   `Express GraphQL Server Now Running On localhost:${port1}/graphql`,
+// ));
+
+// app.listen(port2, () => console.log(
+//   `Express GraphQL Server Now Running On localhost:${port2}/graphql`,
+// ));
+
+// app.listen(port3, () => console.log(
+//   `Express GraphQL Server Now Running On localhost:${port3}/graphql`,
+// ));
