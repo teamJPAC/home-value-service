@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-
 var express = require('express');
-const app = require("../server");
+
+/** DOCKER LOCATION IS IN SERVER/SERVER.JS */
+const app = require("../server/server.js");
 
 // Constants
 const PORT = process.env.PORT || 8080;

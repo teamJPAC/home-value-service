@@ -1,8 +1,17 @@
 const { Pool } = require('pg');
+const client = require('./postdb.js')
+// const connect = 'postgres://postgres:password@localhost:5432/housingdb';
+// const db = new Pool({
+//   connectionString: connect,
+//   max: 20,
+// });
 
-const connect = 'postgres://postgres:password@localhost:5432/housingdb';
 const db = new Pool({
-  connectionString: connect,
+  host: client.host,
+  port: client.port,
+  database: client.database,
+  user: client.user,
+  password: client.password,
   max: 20,
 });
 

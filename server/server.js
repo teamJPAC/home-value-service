@@ -4,7 +4,6 @@ const cors = require('cors');
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const path = require('path');
-const ip = require('./ip.js');
 const schema = require('./schema.js');
 
 // const url = 'mongodb://localhost/houses';

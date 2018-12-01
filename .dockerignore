@@ -8,9 +8,9 @@
 /build
 /dist
 /server/database/seedCSV/csv
+/server/ip.js
 /src/spec/ip.js
 /server/license.js
-/server/postdb.js
 
 # dependencies
 /node_modules
