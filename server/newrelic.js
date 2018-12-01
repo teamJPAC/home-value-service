@@ -1,4 +1,4 @@
-const license = require('./config.js');
+const license = require('./license.js');
 
 /**
  * New Relic agent configuration.
