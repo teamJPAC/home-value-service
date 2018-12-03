@@ -6,7 +6,6 @@
 /.temp
 /.tmp
 /build
-/dist
 /server/database/seedCSV/csv
 /src/spec/ip.js
 /server/license.js
