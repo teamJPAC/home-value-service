@@ -9,7 +9,7 @@ const schema = require('./schema.js');
 // const url = 'mongodb://localhost/houses';
 const url = 'postgres://localhost/housingdb';
 
-const port0 = 5000;
+const port = 5000;
 const port1 = 5001;
 const port2 = 5002;
 const port3 = 5003;
@@ -63,9 +63,9 @@ module.exports = app;
 
 /** NGINX EXPERIMENTS */
 
-// app.listen(port1, () => console.log(
-//   `Express GraphQL Server Now Running On localhost:${port1}/graphql`,
-// ));
+app.listen(port, () => console.log(
+  `Express GraphQL Server Now Running On localhost:${port1}/graphql`,
+));
 
 // app.listen(port2, () => console.log(
 //   `Express GraphQL Server Now Running On localhost:${port2}/graphql`,
