@@ -4,37 +4,29 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-
+  - [Mortgage Service](https://github.com/teamJPAC/mortgage-service)
+  - [Image Gallery](https://github.com/teamJPAC/image-gallery)
+  - [Sidebar Service](https://github.com/teamJPAC/sidebar-service)
 ## Table of Contents
 
-1. [Usage](#Usage)
 1. [Requirements](#requirements)
-1. [Development](#development)
-
-## Usage
-
-> Some usage instructions
+2. [Development](#development)
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
+- Node
 
 ## Development
+Clone the repo with
+```git clone https://github.com/thisisjackie/home-value-service.git```
 
-### Installing Dependencies
+Install dependencies with
+```npm i```
 
-From within the root directory:
+Seed datbase of choice or modify existing postGres routes
 
-```sh
-npm install -g webpack
-npm install
-fix this
-```
+Create bundle and start server
+```npm start```
+
+Now open the browser and navigate to `http://localhost:5000` and you get the working zillgo app.
 
