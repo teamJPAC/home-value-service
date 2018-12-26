@@ -23,7 +23,7 @@ Clone the repo with
 Install dependencies with
 ```npm i```
 
-Seed datbase of choice or modify existing postGres routes
+Seed database of choice or modify existing postGres routes
 
 Create bundle and start server
 ```npm start```
