@@ -1,4 +1,4 @@
-require('newrelic');
+// require('newrelic');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const express = require('express');
@@ -64,7 +64,7 @@ module.exports = app;
 /** NGINX EXPERIMENTS */
 
 app.listen(port, () => console.log(
-  `Express GraphQL Server Now Running On localhost:${port1}/graphql`,
+  `Express GraphQL Server Now Running On localhost:${port}/graphql`,
 ));
 
 // app.listen(port2, () => console.log(
